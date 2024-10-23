@@ -1,0 +1,717 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*! *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+Start nav bar
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= */
+
+nav {
+  background-color: #333;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav li {
+  height: 70px;
+}
+
+nav a {
+  height: 100%;
+  padding: 0 30px;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 20px;
+}
+
+nav a:hover {
+  background-color: #e6e6e6;
+  color: black;
+}
+
+/* ====================================================== */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.2);
+  /*  */
+  backdrop-filter: blur(10px); /*to blur the background*/
+  /*  */
+
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+
+  display: none; /*first we make it flex then make it none*/
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.sidebar li {
+  width: 100%;
+}
+.sidebar a {
+  width: 100%;
+  color: black;
+}
+
+.menu-btn {
+  display: none;
+}
+/* Responsive */
+
+@media (max-width: 890px) {
+  .hideOnMobile {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
+
+@media (max-width: 550px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+
+/*! *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+End nav bar
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= */
+
+/*! *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+Start Swiper js
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= */
+
+.container {
+  width: 100vw;
+  height: 90vh;
+  background-color: #333;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+
+  position: relative;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+/*color of arrows*/
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+  color: #000;
+  margin: 0 40px;
+}
+
+.swiper-slide {
+  background-color: white;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* color of dots*/
+.swiper .swiper-pagination-bullet-active {
+  background-color: black;
+}
+
+/*! *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+End Swipper js
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= */
+
+/*! *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+Start Phone section
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= */
+/* styles.css */
+
+.phone_heading,
+.laptop_heading {
+  text-align: center;
+  font-family: Bradley Hand, cursive;
+  font-size: 60px;
+  margin-top: 90px;
+}
+
+.phone_container {
+  width: 100vw;
+  margin: 150px auto; /* to center section */
+  padding: 100px 50px;
+  clip-path: polygon(97.28% 2.72%, 100% 0%, 99.4% 100%, 0% 100%, 0% 0.77%);
+  background-color: #e6e6e6;
+}
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 45px 15px;
+}
+
+.card {
+    width: 400px;
+    height: 550px;
+    background-color: white;
+    /* padding: 20px; */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    overflow: hidden;
+    /* price of phone*/
+    position: relative;
+}
+/*price of phone*/
+.phone_price {
+    background-color: yellow;
+    position: absolute;
+    top: 20px;
+    left: -50px;
+    padding: 5px 60px;
+    transform: rotate(-45deg);
+    font-weight: bold;
+    font-size: 22px;
+}
+
+/*end of price*/
+
+.card .img-card {
+    width: 100%;
+    height: 60%;
+    object-fit: contain;
+    transition: all 0.5s;
+}
+
+.card:hover {
+  .img-card {
+    transform: scale(1.1);
+  }
+}
+.card .title {
+  margin: 25px 10px 10px;
+  color: #333;
+}
+.card .discription {
+  margin: 25px 10px 10px;
+  color: gray;
+}
+
+.card .btns_card {
+  width: 90%;
+
+  /* background-color: red; */
+
+  margin: 25px auto;
+  transition: all 0.4s;
+  display: flex;
+  gap: 20px;
+}
+.card .btns_card button {
+  width: 50%;
+  font-size: 18px;
+  padding: 8px 0;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  transition: all 0.4s;
+}
+
+.card .btns_card .buy_btn {
+  background-color: tomato;
+  color: #fff;
+}
+
+.card .btns_card .buy_btn:hover {
+  background-color: #fff;
+  border: 1px solid tomato;
+  color: tomato;
+  cursor: pointer;
+}
+
+.card .btns_card .more_info_btn {
+  border: 1px solid #333;
+  background-color: #fff;
+}
+.card .btns_card .more_info_btn:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.card .btns_card .more_info_btn a {
+  color: #333;
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1350px) {
+  .card {
+    flex-grow: 1;
+  }
+}
+@media screen and (max-width: 600px) {
+  .card {
+    flex: 0 1 100%;
+  }
+}
+
+/*show more phone btn*/
+.show_more_phones {
+  margin: 100px auto 0;
+  display: block;
+  width: 250px;
+  border-radius: 10px;
+  background-color: #222;
+  border: 1px solid transparent;
+  transition: all 0.3s;
+
+  margin-top: 100px;
+}
+.show_more_phones:hover {
+  border: 1px solid #222;
+  background-color: #e7e7e7;
+}
+.show_more_phones a {
+  text-decoration: none;
+  font-size: 26px;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-weight: 600;
+  color: #aaa;
+}
+.show_more_phones a:hover {
+  color: #222;
+}
+
+/*! *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+End Phone section
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= */
+
+/*! *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+Start Laptop section
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= */
+
+.laptop_heading {
+  margin-bottom: 90px;
+}
+.lp-con {
+  width: 100vw;
+  background-color: #e7e7e7;
+}
+
+.laptop_container {
+  width: 80vw;
+  /* background-color: red; */
+  margin: 0 auto;
+  margin-bottom: 300px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+
+  grid-template-areas:
+    "box1 box2"
+    "box4 box3"
+    "box5 box6";
+}
+.box {
+  width: calc(40vw - 10px);
+  height: 450px;
+}
+
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* background-color: #fff; */
+}
+
+.box h2 {
+  font-size: 32px;
+  margin-bottom: 45px;
+}
+.box p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.box .btn-laptop {
+  width: 50%;
+  margin-top: 50px;
+  background-color: tomato;
+  color: #fff;
+  font-size: 24px;
+  padding: 15px 0;
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  transition: all 0.5s;
+}
+.box .btn-laptop:hover {
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid tomato;
+  color: tomato;
+}
+
+.box2,
+.box4,
+.box6 {
+  padding: 60px;
+}
+
+.box1 {
+  /* background-color: yellow; */
+  grid-area: box1;
+}
+.box2 {
+  /* background-color: aqua; */
+  grid-area: box2;
+}
+.box3 {
+  /* background-color: darkviolet; */
+  grid-area: box3;
+}
+.box4 {
+  /* background-color: teal; */
+  grid-area: box4;
+}
+.box5 {
+  /* background-color: brown; */
+  grid-area: box5;
+}
+.box6 {
+  /* background-color: orange; */
+  grid-area: box6;
+}
+
+@media screen and (max-width: 850px) {
+  .laptop_container {
+    grid-template-columns: auto;
+
+    grid-template-areas:
+      "box1"
+      "box2"
+      "box3"
+      "box4"
+      "box5"
+      "box6";
+  }
+
+  .box {
+    width: 100%;
+  }
+}
+
+/* show more laptop button*/
+.show_more_laptops {
+  margin: 100px auto 0;
+  display: block;
+  width: 250px;
+  border-radius: 10px;
+  background-color: #222;
+  border: 1px solid transparent;
+  transition: all 0.3s;
+
+  position: relative;
+  bottom: 170px;
+}
+.show_more_laptops:hover {
+  border: 1px solid #222;
+  background-color: #e7e7e7;
+}
+.show_more_laptops a {
+  text-decoration: none;
+  font-size: 26px;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-weight: 600;
+  color: #aaa;
+}
+.show_more_laptops a:hover {
+  color: #222;
+}
+/*! *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+End Laptop section
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= */
+
+/*! *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+Start Airpods section
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= */
+.airpods_container {
+  /* height: 100vh; */
+  position: relative;
+  /* background-color: red; */
+}
+.airpods_heading {
+  font-size: 110px;
+  text-align: center;
+  font-weight: 100;
+  color: #fff;
+  position: absolute;
+  top: 80px; /* Position the top of the h1 at the vertical center */
+  left: 50%; /* Position the left of the h1 at the horizontal center */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Translate the h1 back by half its own width and height */
+  letter-spacing: 9px;
+}
+
+.airpods_prts {
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+  /* background-color: green; */
+  display: flex;
+}
+
+.airpods_prts .airpods-prt1,
+.airpods_prts .airpods-prt2 {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.airpods-prt1 {
+  background-color: #777;
+}
+
+.airpods-prt2 {
+  background-color: #e7e7e7;
+}
+
+.airpods_prts .airpods-prt1 img,
+.airpods_prts .airpods-prt2 img {
+  width: 500px;
+}
+
+.airpods_btn {
+  width: 200px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 18px;
+  margin-top: 50px;
+  font-weight: 700;
+  letter-spacing: 3px;
+
+  background-color: #777;
+  border: 1px solid #777;
+  color: #fff;
+
+  transition: all 0.6s;
+}
+
+.airpods_btn:hover {
+  cursor: pointer;
+}
+.buy {
+  padding: 20px 10px;
+}
+
+.airpods-prt1 .more {
+  background-color: #e7e7e7;
+  border: 1px solid #e7e7e7;
+  color: #777;
+}
+
+.airpods-prt1 .more a {
+  text-decoration: none;
+  color: #777;
+  display: block;
+  width: 100%;
+  padding: 20px 10px;
+}
+.airpods-prt1 .more a {
+  color: #777;
+}
+.airpods-prt1 .more a:hover {
+  color: #e7e7e7;
+}
+.airpods-prt1 .more:hover {
+  background-color: #777;
+  border: 1px solid;
+  color: #e7e7e7;
+}
+
+.airpods-prt2 .buy:hover {
+  background-color: #fff;
+  border: 1px solid #777;
+  color: #777;
+}
+
+@media screen and (max-width: 800px) {
+  .airpods_prts {
+    flex-direction: column;
+  }
+
+  .airpods_prts .airpods-prt1,
+  .airpods_prts .airpods-prt2 {
+    width: 100%;
+    padding: 100px;
+  }
+
+  .airpods_container {
+    height: 200vh;
+  }
+}
+
+/*! *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+End Airpods section
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= */
+
+/*! *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+Start Features section
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= */
+
+.section-featured {
+  padding: 4.8rem 0 3.2rem;
+  /* background-color: red; */
+  width: 80vw;
+  margin: 80px auto;
+}
+.heading-featured-in {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 100px;
+  color: #999;
+}
+.logos {
+  display: flex;
+  justify-content: flex-start;
+  gap: 90px 50px;
+  flex-wrap: wrap;
+}
+.logos img {
+  height: 40px;
+  filter: brightness(0);
+  opacity: 0.5;
+}
+
+/*! *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+End Features section
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= */
+
+/*! *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+Start Footer
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= */
+.footer {
+  background-color: #999;
+  padding: 50px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1.5fr) repeat(2, 1fr);
+
+  gap: 30px;
+
+  margin-top: 160px;
+}
+
+.prt {
+  /* background-color: red; */
+}
+
+.prt h2 {
+  margin-bottom: 40px;
+  color: #fff;
+}
+ul {
+  display: flex;
+  gap: 20px;
+}
+ul li {
+  list-style: none;
+}
+
+ul li a img {
+  width: 40px;
+  display: block;
+}
+
+.prt p {
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+.prt a {
+  color: black;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .footer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .prt3 h2,
+  .prt4 h2 {
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    grid-template-columns: 1fr;
+  }
+
+  .prt2 h2 {
+    margin-top: 50px;
+  }
+}
+/*! *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+End Footer
+*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= */
+
+
